@@ -64,6 +64,12 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionSignin()
+    {
+        return $this->render('signin');
+    }
+
+
     /**
      * Login action.
      *
