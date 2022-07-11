@@ -208,16 +208,18 @@ gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-$form = ActiveForm::begin([
-    'id' => 'login-form',
-    'options' => ['class' => 'form-horizontal'],
-]) ?>
-    <?= $form->field($model, 'username') ?>
-    <?= $form->field($model, 'password')->passwordInput() ?>
+$form = ActiveForm::begin(); ?>
 
-    <div class="form-group">
-        <div class="col-lg-offset-1 col-lg-11">
-            <?= Html::submitButton('Вход', ['class' => 'btn btn-primary']) ?>
-        </div>
-    </div>
-<?php ActiveForm::end() ?>
+  <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+
+  <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+
+  <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+
+  <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+
+  <div class="form-group">
+      <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+  </div>
+
+<?php ActiveForm::end(); ?>
