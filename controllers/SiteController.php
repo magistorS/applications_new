@@ -56,10 +56,10 @@ class SiteController extends Controller
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
-
+            $model->loadDefaultValues();
         }
 
-        return $this->render('signup', [
+        return $this->redirect('signup', [
             'model' => $model,
         ]);
     }

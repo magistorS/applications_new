@@ -2,9 +2,28 @@
 
 $this->title = 'Регистрация';
 ?>
-  <span class="title">INTERSETION</span>
+<span class="title">INTERSETION</span>
 <div class="containers">
 
+  <?php
+  use yii\helpers\Html;
+  use yii\widgets\ActiveForm;
+
+  $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+
+    <div class="form-group">
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    </div>
+
+  <?php ActiveForm::end(); ?>
 
 </div>
 
@@ -204,22 +223,3 @@ gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 
 </script>
 
-<?php
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-
-$form = ActiveForm::begin(); ?>
-
-  <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-  <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-
-  <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
-
-  <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
-
-  <div class="form-group">
-      <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-  </div>
-
-<?php ActiveForm::end(); ?>
