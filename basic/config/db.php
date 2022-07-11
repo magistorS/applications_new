@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
-    'username' => 'root',
-    'password' => '',
+    'dsn' => 'mysql:host=sas2001v.beget.tech; dbname=sas2001v_s',
+    'username' => 'sas2001v_s',
+    'password' => 'sas2003!',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
