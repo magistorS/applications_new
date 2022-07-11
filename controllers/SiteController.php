@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use app\models\LoginForm;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -48,7 +49,19 @@ class SiteController extends Controller
     //Регистрация
     public function actionSignup()
     {
-        return $this->render('signup');
+        $model = new User();
+
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        } else {
+
+        }
+
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
     }
 
     //Вход
